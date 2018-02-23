@@ -37,11 +37,8 @@ class Song
   end
 
   def self.artist_count
-    artist_hash = Hash.new
-    @@artists.sort.each do |artist|
-      artist_key = artist
-      artist_value = @@artists.count(artist)
-      artist_hash[artist_key] = artist_value
+    artist_hash = {}
+    @@artists.sort.each { |artist| artist_hash[artist] = @@artists.count(artist) }
     end
     artist_hash
   end
